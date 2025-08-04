@@ -23,7 +23,7 @@ The **Glamour Salon Management System** is a web-based platform for managing sal
 First, clone the repository from GitHub using the following command:
 
 ```bash
-git clone https://github.com/hirunaofficial/salon-management-system.git
+git remote add origin https://github.com/popking4799/24lashenvy.git
 ```
 
 ### Step 2: Navigate to the Project Directory
