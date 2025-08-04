@@ -167,5 +167,6 @@ $blogs = $stmt->fetchAll(PDO::FETCH_ASSOC);
         alert('Blog post added, but failed to send notification email.');
     }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <?php include 'footer.php'; ?>

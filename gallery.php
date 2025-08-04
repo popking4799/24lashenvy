@@ -55,7 +55,7 @@
             <div class="pro-item col-lg-4 col-md-4 col-xl-4 <?= $category_class ?>">
                 <div class="our-portfolio" data-title-position="left, top">
                     <div class="our-port-thumb">
-                        <img src="<?= $item['file_path'] ?>" alt="<?= $item['title'] ?>">
+                        <img style="border-radius: 15px; width: 100%; height: 250px; object-fit: cover;" src="<?= $item['file_path'] ?>" alt="<?= $item['title'] ?>">
                     </div>
                     <div class="our-hover-information">
                         <div class="our-hover-action">

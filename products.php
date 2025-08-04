@@ -24,7 +24,7 @@ include 'dbconnect.php';
         <div class="row">
             <div class="col-lg-3">
                 <div class="shop-around">
-                    <div class="all-shop2-area ptb-20">
+                    <div class="all-shop2-area ptb-20" style="border-radius: 10px;">
                         <h3 class="leave-comment-text">Price</h3>
                         <div class="widget shop-filter">
                             <div class="price_filter">
@@ -40,7 +40,7 @@ include 'dbconnect.php';
                         <div class="blog-search mt-40 mb-60">
                             <h3 class="leave-comment-text">Search</h3>
                             <form action="" method="GET">
-                                <input value="" placeholder="Search" type="text" name="query">
+                                <input value="" style="border-radius: 10px;" placeholder="Search" type="text" name="query">
                                 <button class="submit" type="submit"><i class="zmdi zmdi-search"></i></button>
                             </form>
                         </div>
@@ -151,7 +151,7 @@ include 'dbconnect.php';
                                                 <div class="hs-shop-details">
                                                     <h4 class="shop-title"><a href="#"><?php echo $product['product_name']; ?></a></h4>
                                                     <ul class="product-price">
-                                                        <li class="new-price">LKR <?php echo number_format($product['price'], 2); ?></li>
+                                                        <li class="new-price">NGN <?php echo number_format($product['price'], 2); ?></li>
                                                         <?php if ($is_out_of_stock): ?>
                                                             <li style="color: red;">Out of Stock</li>
                                                         <?php endif; ?>
@@ -206,7 +206,7 @@ include 'dbconnect.php';
                                                     <h4 class="shop-title"><a href="#"><?php echo $product['product_name']; ?></a></h4>
                                                     <p><?php echo $product['description']; ?></p>
                                                     <ul class="product-price">
-                                                        <li class="new-price">LKR <?php echo number_format($product['price'], 2); ?></li>
+                                                        <li class="new-price">NGN <?php echo number_format($product['price'], 2); ?></li>
                                                         <?php if ($is_out_of_stock): ?>
                                                             <li style="color: red;">Out of Stock</li>
                                                         <?php endif; ?>

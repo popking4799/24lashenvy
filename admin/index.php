@@ -96,7 +96,7 @@ $user_role = $stmt_role->fetch(PDO::FETCH_ASSOC)['role'];
             <?php if ($user_role === 'admin'): ?>
                 <div class="col-lg-4 col-md-6 mb-6">
                     <a href="manage-users.php">
-                        <div class="single-service-area">
+                        <div class="single-service-area" style="border-radius: 15px;">
                             <div class="service-icon">
                                 <img src="../images/icons/manage_users.png" alt="Manage Users">
                             </div>
@@ -108,7 +108,7 @@ $user_role = $stmt_role->fetch(PDO::FETCH_ASSOC)['role'];
 
                 <div class="col-lg-4 col-md-6 mb-6">
                     <a href="manage-services.php">
-                        <div class="single-service-area">
+                        <div class="single-service-area" style="border-radius: 15px;">
                             <div class="service-icon">
                                 <img src="../images/icons/edit_services.png" alt="Manage Services">
                             </div>
@@ -120,7 +120,7 @@ $user_role = $stmt_role->fetch(PDO::FETCH_ASSOC)['role'];
 
                 <div class="col-lg-4 col-md-6 mb-6">
                     <a href="manage-products.php">
-                        <div class="single-service-area">
+                        <div class="single-service-area" style="border-radius: 15px;">
                             <div class="service-icon">
                                 <img src="../images/icons/manage_products.png" alt="Manage Products">
                             </div>
@@ -133,7 +133,7 @@ $user_role = $stmt_role->fetch(PDO::FETCH_ASSOC)['role'];
 
             <div class="col-lg-4 col-md-6 mb-6">
                 <a href="manage-appointments.php">
-                    <div class="single-service-area">
+                    <div class="single-service-area" style="border-radius: 15px;">
                         <div class="service-icon">
                             <img src="../images/icons/manage_appointments.png" alt="Manage Appointments">
                         </div>
@@ -146,7 +146,7 @@ $user_role = $stmt_role->fetch(PDO::FETCH_ASSOC)['role'];
             <?php if ($user_role === 'admin'): ?>
             <div class="col-lg-4 col-md-6 mb-6">
                 <a href="manage-orders.php">
-                    <div class="single-service-area">
+                    <div class="single-service-area" style="border-radius: 15px;">
                         <div class="service-icon">
                             <img src="../images/icons/manage_orders.png" alt="Manage Orders">
                         </div>
@@ -158,7 +158,7 @@ $user_role = $stmt_role->fetch(PDO::FETCH_ASSOC)['role'];
 
             <div class="col-lg-4 col-md-6 mb-6">
                 <a href="manage-blog.php">
-                    <div class="single-service-area">
+                    <div class="single-service-area" style="border-radius: 15px;">
                         <div class="service-icon">
                             <img src="../images/icons/manage_blog.png" alt="Manage Blog">
                         </div>
@@ -170,7 +170,7 @@ $user_role = $stmt_role->fetch(PDO::FETCH_ASSOC)['role'];
 
             <div class="col-lg-4 col-md-6 mb-6">
                 <a href="manage-comments.php">
-                    <div class="single-service-area">
+                    <div class="single-service-area" style="border-radius: 15px;">
                         <div class="service-icon">
                             <img src="../images/icons/manage_comments.png" alt="Manage Comments">
                         </div>
@@ -182,7 +182,7 @@ $user_role = $stmt_role->fetch(PDO::FETCH_ASSOC)['role'];
 
             <div class="col-lg-4 col-md-6 mb-6">
                 <a href="edit-gallery.php">
-                    <div class="single-service-area">
+                    <div class="single-service-area" style="border-radius: 15px;">
                         <div class="service-icon">
                             <img src="../images/icons/edit_gallery.png" alt="Edit Gallery Images">
                         </div>
@@ -194,7 +194,7 @@ $user_role = $stmt_role->fetch(PDO::FETCH_ASSOC)['role'];
 
             <div class="col-lg-4 col-md-6 mb-6">
                 <a href="contact-messages.php">
-                    <div class="single-service-area">
+                    <div class="single-service-area" style="border-radius: 15px;">
                         <div class="service-icon">
                             <img src="../images/icons/contact_responses.png" alt="Contact Message Responses">
                         </div>

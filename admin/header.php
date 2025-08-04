@@ -4,7 +4,7 @@ include '../dbconnect.php';
 
 // Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
-    echo "<script>alert('Please log in to access this page.'); window.location.href = 'login.php';</script>";
+    echo "<script>alert('Please log in to access this page.'); window.location.href = '../login.php';</script>";
     exit;
 }
 
@@ -26,7 +26,7 @@ if ($user['role'] !== 'admin' && $user['role'] !== 'staff') {
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Glamour Salon - Admin Dashboard</title>
+    <title>24LashEnvy - Admin Dashboard</title>
     <meta name="description" content="Luxury hair and beauty services at Glamour Salon. Manage users, services, appointments, and more.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
@@ -47,7 +47,7 @@ if ($user['role'] !== 'admin' && $user['role'] !== 'staff') {
                     <div class="row align-items-center">
                         <div class="col-md-3 col-lg-2 d-none d-md-block">
                             <div class="hs-logo">
-                                <a href="index.php"><img src="../images/logo/hair-salon.png" alt="hair salon logo"></a>
+                                <a href="index.php"><img src="../images/logo/hair-salon 11.png" alt="hair salon logo"></a>
                             </div>
                         </div>
                         <div class="col-md-9 col-lg-10">

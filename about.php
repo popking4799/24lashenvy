@@ -38,12 +38,10 @@
                     <h2 class="section-title">Our Story</h2>
                     <p class="theme-color pra-1">A Legacy of Beauty and Care</p>
                     <div class="story-details">
-                        <p>Welcome to Glamour Salon, where beauty meets passion. Founded with a vision to offer premium beauty services in a luxurious and relaxing environment, Glamour Salon has become a haven for those seeking exceptional hair and beauty care.</p>
-                        <p>Our team of skilled professionals is committed to staying ahead of the latest trends and techniques to ensure that every client leaves feeling their best. From haircuts and styling to makeup and spa treatments, we offer personalized services that enhance your natural beauty.</p>
-                        <p>With years of experience and a passion for creativity, we continuously strive to provide an unmatched salon experience that exceeds your expectations. At Glamour Salon, we don't just offer services, we create an experience of indulgence and relaxation.</p>
+                    <p>Welcome to <strong>24LashEnvy</strong>, where beauty meets precision. Founded with a vision to deliver premium lash services in a chic and calming environment, <strong>24LashEnvy</strong> has become a trusted destination for those seeking flawless, long-lasting lash enhancements.</p> <p>Our team of certified lash artists is dedicated to mastering the latest techniques and styles to ensure every client leaves feeling confident and radiant. From classic extensions to volume sets and lash lifts, we offer personalized services designed to highlight and enhance your natural beauty.</p> <p>With a passion for detail and a commitment to excellence, we aim to provide an exceptional salon experience that goes beyond expectations. At <strong>24LashEnvy</strong>, it’s not just about lashes — it’s about giving you the luxury, care, and confidence you deserve.</p>
                     </div>
                     <div class="story-writter">
-                        <img src="images/story-img/2.png" alt="Founder Signature">
+                        <!-- <img src="images/story-img/2.png" alt="Founder Signature"> -->
                     </div>
                 </div>
             </div>

@@ -62,30 +62,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="row all-contact-text">
                     <div class="col-md-6">
                         <div class="contact-message">
-                            <input name="con_name" class="form-control" type="text" required placeholder="Your Name">
+                            <input name="con_name" style="border-radius: 10px;" class="form-control" type="text" required placeholder="Your Name">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="contact-message">
-                            <input name="con_email" class="form-control" type="email" required placeholder="Your Email">
+                            <input name="con_email" style="border-radius: 10px;" class="form-control" type="email" required placeholder="Your Email">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="contact-message">
-                            <input name="con_phone" class="form-control" type="tel" required placeholder="Phone Number">
+                            <input name="con_phone" style="border-radius: 10px;" class="form-control" type="tel" required placeholder="Phone Number">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="contact-message">
-                            <input name="con_subject" class="form-control" type="text" required placeholder="Subject">
+                            <input name="con_subject" style="border-radius: 10px;" class="form-control" type="text" required placeholder="Subject">
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="contact-textarea">
-                            <textarea name="con_message" class="form-control" required placeholder="Your Message"></textarea>
+                            <textarea name="con_message" class="form-control" style="border-radius: 10px; resize: none;" required placeholder="Your Message"></textarea>
                         </div>
                         <div class="submit mt-20">
-                            <input class="submit" type="submit" value="Send Message">
+                            <input class="submit" style="border-radius: 10px;" type="submit" value="Send Message">
                         </div>
                     </div>
                 </div>
@@ -100,16 +100,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <a href="#"><i class="zmdi zmdi-pin"></i></a>
                             </div>
                             <div class="footer-address">
-                                <p>Address: 123 Glamour Salon St, Colombo, Sri Lanka</p>
+                                <p>Address: Abacha road opposite paradise cruise</p>
                             </div>
                         </div>
                         <div class="ft-single-address">
                             <div class="footer-icon">
-                                <a href="mailto:info@glamoursalon.com"><i class="zmdi zmdi-email"></i></a>
+                                <a href="mailto:info@24LashEnvy.com"><i class="zmdi zmdi-email"></i></a>
                             </div>
                             <div class="footer-address">
-                                <p><a href="mailto:info@glamoursalon.com">info@glamoursalon.com</a></p>
-                                <p><a href="mailto:support@glamoursalon.com">support@glamoursalon.com</a></p>
+                                <p><a href="mailto:info@24LashEnvy.com">info@24LashEnvy.com</a></p>
+                                <p><a href="mailto:support@24LashEnvy.com">support@24LashEnvy.com</a></p>
                             </div>
                         </div>
                         <div class="ft-single-address">
@@ -117,8 +117,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <a href="tel:+94123456789"><i class="zmdi zmdi-phone"></i></a>
                             </div>
                             <div class="footer-address">
-                                <p><a href="tel:+94123456789">+94 123 456 789</a></p>
-                                <p><a href="tel:+94123456789">+94 123 456 789</a></p>
+                                <p><a href="tel:+2349048776251">+234 904 877 6251</a></p>
+                                <p><a href="tel:+2348061120132">+234 806 112 0132</a></p>
                             </div>
                         </div>
                     </div>
@@ -133,7 +133,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <div class="map-area">
     <div class="contact-map">
         <div id="hastech">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15844.090194470838!2d79.84746044497318!3d6.8879023393172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25bdb2b0473d7%3A0x25dd59a03ad76bb4!2sColombo%2004%2C%20Colombo!5e0!3m2!1sen!2slk!4v1727728205101!5m2!1sen!2slk" allowfullscreen></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d960.1325614536797!2d7.584080841018863!3d9.02710239487421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e09489350e2fd%3A0x6027cce5e75753ee!2sParadise%20Cruise!5e0!3m2!1sen!2sng!4v1752731764639!5m2!1sen!2sng" allowfullscreen></iframe>
         </div>
     </div>
 </div>

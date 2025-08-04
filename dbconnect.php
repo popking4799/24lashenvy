@@ -6,7 +6,7 @@ use Dotenv\Dotenv;
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-$host = 'db'; 
+$host = "localhost"; 
 $db   = $_ENV['MYSQL_DATABASE'];
 $user = $_ENV['MYSQL_USER'];
 $pass = $_ENV['MYSQL_PASSWORD'];

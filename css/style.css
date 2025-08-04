@@ -251,13 +251,24 @@ h4.ser-vice-tit {
 
 .team-thumb {
     position: relative;
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    overflow: hidden; /* Important: crops anything outside the circle */
+    margin: 0 auto;
+    z-index: 2;
 }
+
 .team-thumb img {
-    position: relative;
-    z-index: 3;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* Ensures the image fills the circle neatly */
+    border-radius: 50%;    /* Makes the image circular */
+    display: block;
 }
 
 .team-thumb::before {
+    z-index: 1;
     background: transparent none repeat scroll 0 0;
     border: 2px solid #606060;
     border-radius: 100%;
@@ -272,7 +283,8 @@ h4.ser-vice-tit {
     transition: 0.3s;
 }
 .team-thumb::after {
-    background: #fff none repeat scroll 0 0;
+    z-index: 1;
+    background: none repeat scroll 0 0;
     border: 2px solid #fff;
     border-radius: 100%;
     bottom: 0;

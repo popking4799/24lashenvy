@@ -16,7 +16,7 @@ function sendAppointmentUpdateEmail($email, $appointmentDetails) {
         $mail->SMTPAuth = true;
         $mail->Username = $_ENV['SMTP_USER'];
         $mail->Password = $_ENV['SMTP_PASSWORD'];
-        $mail->SMTPSecure = 'ssl';
+        $mail->SMTPSecure = 'tls';
         $mail->Port = $_ENV['SMTP_PORT'];
 
         $mail->setFrom($_ENV['SMTP_USER'], 'Salon Name');

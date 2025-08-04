@@ -37,7 +37,7 @@ class PDF extends FPDF {
     function Header() {
         $this->SetFont('Arial', 'B', 12);
         $this->Cell(80);
-        $this->Cell(30, 10, 'Glamour Salon - Order Invoice', 0, 1, 'C');
+        $this->Cell(30, 10, '24LashEnvy - Order Invoice', 0, 1, 'C');
         $this->Ln(10);
     }
 
@@ -77,7 +77,7 @@ $pdf->Cell(40, 10, ucfirst(str_replace('_', ' ', $order['payment_method'])), 0, 
 $pdf->Cell(40, 10, 'Status:', 0, 0);
 $pdf->Cell(40, 10, ucfirst($order['status']), 0, 1);
 $pdf->Cell(40, 10, 'Total:', 0, 0);
-$pdf->Cell(40, 10, 'LKR ' . number_format($order['total'], 2), 0, 1);
+$pdf->Cell(40, 10, 'NGN ' . number_format($order['total'], 2), 0, 1);
 
 $pdf->Ln(10);
 
@@ -92,8 +92,8 @@ $pdf->Ln();
 foreach ($order_items as $item) {
     $pdf->Cell(70, 10, $item['product_name'], 1);
     $pdf->Cell(30, 10, $item['quantity'], 1);
-    $pdf->Cell(40, 10, 'LKR ' . number_format($item['price'], 2), 1);
-    $pdf->Cell(40, 10, 'LKR ' . number_format($item['total'], 2), 1);
+    $pdf->Cell(40, 10, 'NGN ' . number_format($item['price'], 2), 1);
+    $pdf->Cell(40, 10, 'NGN ' . number_format($item['total'], 2), 1);
     $pdf->Ln();
 }
 

@@ -64,7 +64,7 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <td><?= $order['order_id'] ?></td>
                     <td><?= $order['first_name'] . ' ' . $order['last_name'] ?></td>
                     <td><?= $order['email'] ?></td>
-                    <td>LKR <?= number_format($order['total'], 2) ?></td>
+                    <td>NGN <?= number_format($order['total'], 2) ?></td>
                     <td><?= ucfirst($order['payment_method']) ?></td>
                     <td><?= ucfirst($order['status']) ?></td>
                     <td><?= date('F d, Y', strtotime($order['created_at'])) ?></td>
@@ -121,5 +121,7 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </tbody>
     </table>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 
 <?php include 'footer.php'; ?>

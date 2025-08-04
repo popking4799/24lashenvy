@@ -15,13 +15,14 @@ if (isset($_SESSION['user_id'])) {
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Glamour Salon</title>
+    <title>24LashEnvy</title>
     <meta name="description" content="Luxury hair and beauty services at Glamour Salon. Discover the best haircuts, beauty treatments, and pampering experiences.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.html">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/shortcode/shortcodes.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -37,7 +38,7 @@ if (isset($_SESSION['user_id'])) {
                     <div class="row align-items-center">
                         <div class="col-md-3 col-lg-2 d-none d-md-block">
                             <div class="hs-logo">
-                                <a href="index.php"><img src="images/logo/hair-salon.png" alt="hair salon logo"></a>
+                                <a href="index.php"><img src="images/logo/hair-salon 11.png" alt="hair salon logo"></a>
                             </div>
                         </div>
                         <div class="col-md-9 col-lg-10">

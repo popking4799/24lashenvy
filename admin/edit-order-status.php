@@ -16,14 +16,14 @@ function sendOrderUpdateEmail($email, $orderDetails) {
         $mail->SMTPAuth = true;
         $mail->Username = $_ENV['SMTP_USER'];
         $mail->Password = $_ENV['SMTP_PASSWORD'];
-        $mail->SMTPSecure = 'ssl';
+        $mail->SMTPSecure = 'tls';
         $mail->Port = $_ENV['SMTP_PORT'];
 
-        $mail->setFrom($_ENV['SMTP_USER'], 'Glamour Store');
+        $mail->setFrom($_ENV['SMTP_USER'], '24LashEnvy Store');
         $mail->addAddress($email);
 
         $mail->isHTML(true);
-        $mail->Subject = 'Order Update from Glamour Store';
+        $mail->Subject = 'Order Update from 24LashEnvy Store';
         $mail->Body = $orderDetails;
 
         $mail->send();
@@ -55,10 +55,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $orderDetails .= "<p>Your order (ID: {$order['order_id']}) has been updated with the following details:</p>";
     $orderDetails .= "<p><strong>Status:</strong> <span style='font-weight: bold; color: #5cb85c;'>" . ucfirst($order['status']) . "</span></p>";
     $orderDetails .= "<p><strong>Payment Method:</strong> " . ucfirst(str_replace('_', ' ', $order['payment_method'])) . "</p>";
-    $orderDetails .= "<p><strong>Total Amount:</strong> LKR " . number_format($order['total'], 2) . "</p>";
+    $orderDetails .= "<p><strong>Total Amount:</strong> NGN " . number_format($order['total'], 2) . "</p>";
     $orderDetails .= "<p><strong>Order Date:</strong> " . date('F d, Y', strtotime($order['created_at'])) . "</p>";
     $orderDetails .= "<p>If you have any questions, please feel free to contact us.</p>";
-    $orderDetails .= "<p>Thank you for shopping with Glamour Store!</p>";
+    $orderDetails .= "<p>Thank you for shopping with 24LashEnvy Store!</p>";
 
     sendOrderUpdateEmail($order['email'], $orderDetails);
 

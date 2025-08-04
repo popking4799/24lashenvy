@@ -59,7 +59,7 @@ if (isset($_GET['order_id'])) {
                     </tr>
                     <tr>
                         <th>Total</th>
-                        <td>LKR <?= number_format($order['total'], 2) ?></td>
+                        <td>NGN <?= number_format($order['total'], 2) ?></td>
                     </tr>
                     <tr>
                         <th>Payment Method</th>
@@ -97,8 +97,8 @@ if (isset($_GET['order_id'])) {
                     <tr>
                         <th>Product Name</th>
                         <th>Quantity</th>
-                        <th>Price (LKR)</th>
-                        <th>Total (LKR)</th>
+                        <th>Price (NGN)</th>
+                        <th>Total (NGN)</th>
                     </tr>
                 </thead>
                 <tbody>

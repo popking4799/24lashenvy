@@ -1,8 +1,13 @@
+    <style>
+  input::placeholder {
+    color: white;
+  }
+</style>
     <section id="hs-newsletter-area" class="hs-newsletter-area">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="hs-newsletter-inner bg-theme">
+                    <div class="hs-newsletter-inner bg-theme" style="border-radius: 15px;">
                         <form action="newsletter_signup.php" method="POST">
                             <div class="row align-items-center justify-content-center">
                                 <div class="col-md-auto">
@@ -15,7 +20,7 @@
                                 </div>
                                 <div class="col-md-auto">
                                     <div class="sing-up-btn">
-                                        <button type="submit" class="hs-btn hs-btn-3">Subscribe</button>
+                                        <button type="submit" class="hs-btn hs-btn-3" style="border: none;">Subscribe</button>
                                     </div>
                                 </div>
                             </div>
@@ -33,14 +38,14 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="single-footer-widget">
                             <div class="footer-logo">
-                                <img src="images/logo/hair-salon.png" alt="footer logo">
+                                <img src="images/logo/hair-salon 11.png" alt="footer logo">
                             </div>
                             <p class="footer-pra">Providing top-quality hair and beauty services, our salon ensures that every customer leaves feeling rejuvenated and confident. Visit us for a luxurious experience.</p>
                             <ul class="social-icon">
                                 <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
                                 <li><a href="#"><i class="zmdi zmdi-instagram"></i></a></li>
                                 <li><a href="#"><i class="zmdi zmdi-youtube"></i></a></li>
-                                <li><a href="#"><i class="zmdi zmdi-whatsapp"></i></a></li>
+                                <li><a href="https://wa.me/+2349048776251"><i class="zmdi zmdi-whatsapp"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -64,7 +69,7 @@
                                         <a href="#"><i class="zmdi zmdi-pin"></i></a>
                                     </div>
                                     <div class="footer-address">
-                                        <p>Address: Colombo, Sri Lanka.</p>
+                                        <p>Address: Abacha road opposite paradise cruise</p>
                                     </div>
                                 </div>
                                 <div class="ft-single-address">
@@ -72,8 +77,8 @@
                                         <a href="#"><i class="zmdi zmdi-email"></i></a>
                                     </div>
                                     <div class="footer-address">
-                                        <p><a href="mailto:info@glamoursalon.com">info@glamoursalon.com</a></p>
-                                        <p><a href="mailto:support@glamoursalon.com">support@glamoursalon.com</a></p>
+                                        <p><a href="mailto:info@24LashEnvy.com">info@24LashEnvy.com</a></p>
+                                        <p><a href="mailto:support@24LashEnvy.com">support@24LashEnvy.com</a></p>
                                     </div>
                                 </div>
                                 <div class="ft-single-address">
@@ -81,8 +86,8 @@
                                         <a href="#"><i class="zmdi zmdi-phone"></i></a>
                                     </div>
                                     <div class="footer-address">
-                                        <p><a href="tel:+94123456789">+94 123 456 789</a></p>
-                                        <p><a href="tel:+94123456789">+94 123 456 789</a></p>
+                                        <p><a href="tel:+2349048776251">+234 904 877 6251</a></p>
+                                        <p><a href="tel:+2348061120132">+234 806 112 0132</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -93,12 +98,12 @@
                         <div class="single-footer-widget">
                             <h4 class="footer-title">GALLERY</h4>
                             <ul class="our-colection">
-                                <li><a href="#"><img src="images/others/sm-img/1.jpg" alt="salon image"></a></li>
-                                <li><a href="#"><img src="images/others/sm-img/2.jpg" alt="salon image"></a></li>
-                                <li><a href="#"><img src="images/others/sm-img/3.jpg" alt="salon image"></a></li>
-                                <li><a href="#"><img src="images/others/sm-img/4.jpg" alt="salon image"></a></li>
-                                <li><a href="#"><img src="images/others/sm-img/5.jpg" alt="salon image"></a></li>
-                                <li><a href="#"><img src="images/others/sm-img/6.jpg" alt="salon image"></a></li>
+                                <li><a href="#"><img src="images/others/sm-img/1.jpg" style="border-radius: 10px;" alt="salon image"></a></li>
+                                <li><a href="#"><img src="images/others/sm-img/2.jpg" style="border-radius: 10px;" alt="salon image"></a></li>
+                                <li><a href="#"><img src="images/others/sm-img/3.jpg" style="border-radius: 10px;" alt="salon image"></a></li>
+                                <li><a href="#"><img src="images/others/sm-img/4.jpg" style="border-radius: 10px;" alt="salon image"></a></li>
+                                <li><a href="#"><img src="images/others/sm-img/5.jpg" style="border-radius: 10px;" alt="salon image"></a></li>
+                                <li><a href="#"><img src="images/others/sm-img/6.jpg" style="border-radius: 10px;" alt="salon image"></a></li>
                             </ul>
                         </div>
                     </div>
@@ -112,7 +117,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="footer-btm-inner text-center">
-                                <p>© 2024 <span class="text-capitalize">Glamour Salon</span> all rights reserved.</p>
+                                <p>© 2024 <span class="text-capitalize">24LashEnvy</span> all rights reserved.</p>
                             </div>
                         </div>
                     </div>

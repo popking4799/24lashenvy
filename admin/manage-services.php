@@ -46,7 +46,7 @@ $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <?php endif; ?>
 
     <!-- Button to trigger Add Service Modal -->
-    <button class="btn btn-primary ce5" data-bs-toggle="modal" data-bs-target="#addServiceModal">Add Service</button>
+    <button class="btn btn-primary ce5"style="border-radius: 5px;" data-bs-toggle="modal" data-bs-target="#addServiceModal">Add Service</button>
 
     <table class="table table-bordered mt-4">
         <thead>
@@ -70,8 +70,8 @@ $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <td><?= $service['member_price'] ?></td>
                     <td><?= $service['duration'] ?> mins</td>
                     <td>
-                        <button class="btn btn-primary ce5" data-bs-toggle="modal" data-bs-target="#editServiceModal<?= $service['service_id'] ?>">Edit</button>
-                        <a href="delete-service.php?service_id=<?= $service['service_id'] ?>" class="btn btn-primary ce5" onclick="return confirm('Are you sure you want to delete this service?')">Delete</a>
+                        <button class="btn btn-primary ce5" data-bs-toggle="modal" data-bs-target="#editServiceModal<?= $service['service_id'] ?>"style="border-radius: 5px;">Edit</button>
+                        <a href="delete-service.php?service_id=<?= $service['service_id'] ?>" class="btn btn-primary ce5" onclick="return confirm('Are you sure you want to delete this service?')"style="border-radius: 5px;">Delete</a>
                     </td>
                 </tr>
 
@@ -113,7 +113,7 @@ $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary ce5" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary ce5">Save changes</button>
+                                    <button type="submit"style="border-radius: 5px;" class="btn btn-primary ce5">Save changes</button>
                                 </div>
                             </form>
                         </div>
@@ -168,5 +168,6 @@ $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <?php include 'footer.php'; ?>

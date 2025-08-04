@@ -17,9 +17,9 @@ function sendStockNotificationEmail($product_name, $product_description, $produc
         $mail->SMTPAuth = true;
         $mail->Username = $_ENV['SMTP_USER'];
         $mail->Password = $_ENV['SMTP_PASSWORD'];
-        $mail->SMTPSecure = 'ssl';
+        $mail->SMTPSecure = 'tls';
         $mail->Port = $_ENV['SMTP_PORT'];
-        $mail->setFrom($_ENV['SMTP_USER'], 'Glamour Salon');
+        $mail->setFrom($_ENV['SMTP_USER'], ' 24LashEnvy');
 
         // Add all subscriber emails
         foreach ($subscribers as $subscriber) {
@@ -31,7 +31,7 @@ function sendStockNotificationEmail($product_name, $product_description, $produc
         $mail->Body = "<h2>Good News!</h2>
                        <p>The product <strong>$product_name</strong> is now back in stock!</p>
                        <p>$product_description</p>
-                       <p>Price: LKR " . number_format($product_price, 2) . "</p>
+                       <p>Price: NGN " . number_format($product_price, 2) . "</p>
                        <p><a href='$product_link'>Click here to view the product page</a></p>
                        <p>Visit our website to purchase it now!</p>";
 

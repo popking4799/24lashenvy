@@ -3,41 +3,37 @@ include 'header.php';
 include 'dbconnect.php';
 require 'vendor/autoload.php';
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 use Dotenv\Dotenv;
+use MailerSend\MailerSend;
+use MailerSend\Helpers\Builder\Recipient;
+use MailerSend\Helpers\Builder\EmailParams;
 
-// Load environment variables
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-// Function to send OTP
+// Function to send OTP using MailerSend API
 function sendOTP($email, $otp) {
-    $mail = new PHPMailer(true);
     try {
-        $mail->isSMTP();
-        $mail->Host = $_ENV['SMTP_HOST'];
-        $mail->SMTPAuth = true;
-        $mail->Username = $_ENV['SMTP_USER'];
-        $mail->Password = $_ENV['SMTP_PASSWORD'];
-        $mail->SMTPSecure = 'ssl';
-        $mail->Port = $_ENV['SMTP_PORT'];
+        $mailersend = new MailerSend(['api_key' => $_ENV['MAILERSEND_API_KEY']]);
 
-        $mail->setFrom($_ENV['SMTP_USER'], 'Glamour Salon');
-        $mail->addAddress($email);
+        $recipients = [new Recipient($email, 'Customer')];
 
-        $mail->isHTML(true);
-        $mail->Subject = 'Your OTP for Glamour Salon Account Verification';
-        $mail->Body = "Dear Customer,<br><br>Your OTP for verifying your Glamour Salon account is: <b>$otp</b>.<br><br>This OTP will expire in 10 minutes.<br><br>Thank you for choosing Glamour Salon!<br><br>Best regards,<br>Glamour Salon Team";
+        $emailParams = (new EmailParams())
+            ->setFrom($_ENV['MAILERSEND_SENDER_EMAIL'])
+            ->setFromName($_ENV['MAILERSEND_SENDER_NAME'])
+            ->setRecipients($recipients)
+            ->setSubject('Your OTP for 24LashEnvy Account Verification')
+            ->setHtml("Dear Customer,<br><br>Your OTP is: <b>$otp</b>.<br><br>This OTP will expire in 10 minutes.<br><br>Thanks,<br>24LashEnvy Team");
 
-        $mail->send();
+        $mailersend->email->send($emailParams);
         return true;
     } catch (Exception $e) {
+        error_log('MailerSend Error: ' . $e->getMessage());
         return false;
     }
 }
 
-// Handle registration submission
+// Handle registration
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
@@ -45,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $telephone = $_POST['telephone'];
 
-    // Check if the email already exists in users table
+    // Check if email already exists
     $stmt_users = $pdo->prepare("SELECT * FROM users WHERE email = :email");
     $stmt_users->execute(['email' => $email]);
     $existing_user = $stmt_users->fetch(PDO::FETCH_ASSOC);
@@ -54,17 +50,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
         $message = "An account with this email already exists.";
         $message_type = 'danger';
     } else {
-        // Generate OTP
         $otp_code = rand(100000, 999999);
         $otp_expiry = date('Y-m-d H:i:s', strtotime('+10 minutes'));
 
-        // Check if email already exists in user_otp
         $stmt_check_otp = $pdo->prepare("SELECT * FROM user_otp WHERE email = :email");
         $stmt_check_otp->execute(['email' => $email]);
         $existing_otp_entry = $stmt_check_otp->fetch(PDO::FETCH_ASSOC);
 
         if ($existing_otp_entry) {
-            // Update the existing OTP record with new data
             $stmt_update_otp = $pdo->prepare("
                 UPDATE user_otp 
                 SET first_name = :first_name, last_name = :last_name, password = :password, telephone = :telephone, otp_code = :otp_code, otp_expiry = :otp_expiry 
@@ -80,7 +73,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                 'otp_expiry' => $otp_expiry
             ]);
         } else {
-            // Insert new OTP record
             $stmt_otp = $pdo->prepare("
                 INSERT INTO user_otp (first_name, last_name, email, password, telephone, otp_code, otp_expiry) 
                 VALUES (:first_name, :last_name, :email, :password, :telephone, :otp_code, :otp_expiry)
@@ -96,14 +88,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
             ]);
         }
 
-        // Send OTP via email
+        // Send OTP
         if (sendOTP($email, $otp_code)) {
             echo "<script type='text/javascript'>
                     alert('OTP sent to your email. Please check your inbox.');
                     window.location.href = 'verify.php?email=$email';
                   </script>";
         } else {
-            $message = "Failed to send OTP. Please try again.";
+            $message = "Failed to send OTP. Please try again later.";
             $message_type = 'danger';
         }
     }
@@ -139,23 +131,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                     <form action="register.php" method="POST">
                         <div class="form-group">
                             <label>First Name</label>
-                            <input type="text" class="form-control" name="first_name" required placeholder="Enter your first name">
+                            <input type="text" class="form-control" name="first_name" required>
                         </div>
                         <div class="form-group">
                             <label>Last Name</label>
-                            <input type="text" class="form-control" name="last_name" required placeholder="Enter your last name">
+                            <input type="text" class="form-control" name="last_name" required>
                         </div>
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="email" class="form-control" name="email" required placeholder="Enter your email">
+                            <input type="email" class="form-control" name="email" required>
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" class="form-control" name="password" required placeholder="Enter your password">
+                            <input type="password" class="form-control" name="password" required>
                         </div>
                         <div class="form-group">
                             <label>Telephone</label>
-                            <input type="tel" class="form-control" name="telephone" required placeholder="Enter your phone number">
+                            <input type="tel" class="form-control" name="telephone" required>
                         </div>
                         <div class="form-group">
                             <button type="submit" name="register" class="btn btn-primary ce5 btn-large mb-10">Register</button>
@@ -178,7 +170,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
     border-radius: 4px;
     margin-bottom: 20px;
 }
-
 .btn-primary {
     border: none;
     padding: 12px;
@@ -186,7 +177,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
     width: 100%;
     height: 45px;
 }
-
 .alert {
     padding: 15px;
     margin-bottom: 20px;

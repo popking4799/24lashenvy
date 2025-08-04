@@ -81,7 +81,7 @@
                             <div class="single-blog-wrap mb-30">
                                 <div class="blog-front">
                                     <div class="blog-thumb">
-                                        <img src="<?= $blog['image'] ?>" alt="blog images">
+                                        <img style="border-top-left-radius: 15px; border-top-right-radius: 15px; width: 100%; height: 200px; object-fit: cover;" src="<?= $blog['image'] ?>" alt="blog images">
                                     </div>
                                     <div class="blog-hover-info">
                                         <div class="blog-hover-action">
@@ -89,7 +89,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="blog-details">
+                                <div class="blog-details"style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
                                     <h4 class="blog-title"><a href="blog-details.php?id=<?= $blog['id'] ?>"><?= $blog['title'] ?></a></h4>
                                     <ul class="blog-post-date">
                                         <li class="post-time"><i class="zmdi zmdi-time"></i><span><?= date('M d, Y', strtotime($blog['post_date'])) ?></span></li>
@@ -143,7 +143,7 @@
                             ?>
                             <div class="single-site-video">
                                 <div class="blog-video-img">
-                                    <a href="blog-details.php?id=<?= $recent['id'] ?>"><img src="<?= $recent['image'] ?>" alt="<?= $recent['title'] ?>"></a>
+                                    <a href="blog-details.php?id=<?= $recent['id'] ?>"><img style="border-radius: 5px; width: 100%; height: 80px; object-fit: cover;" src="<?= $recent['image'] ?>" alt="<?= $recent['title'] ?>"></a>
                                 </div>
                                 <div class="blog-video-text">
                                     <h3><a href="blog-details.php?id=<?= $recent['id'] ?>"><?= $recent['title'] ?></a></h3>
@@ -185,7 +185,7 @@
 
                             $unique_tags = array_unique($all_tags);
                             foreach ($unique_tags as $tag) {
-                                echo '<li><a href="blog.php?tag=' . urlencode(trim($tag)) . '">' . trim($tag) . '</a></li>';
+                                echo '<li><a style="border-radius: 10px;" href="blog.php?tag=' . urlencode(trim($tag)) . '">' . trim($tag) . '</a></li>';
                             }
                             ?>
                         </ul>

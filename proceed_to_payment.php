@@ -40,43 +40,31 @@ $user = $stmt_user->fetch(PDO::FETCH_ASSOC);
 
 // Handle payment method logic
 if ($order['payment_method'] === 'online_payment') {
-    $merchant_id = $_ENV['PAYHERE_MERCHANT_ID'];
-    $merchant_secret = $_ENV['PAYHERE_MERCHANT_SECRET'];
-    $return_url = $_ENV['PAYHERE_RETURN_URL'];
-    $cancel_url = $_ENV['PAYHERE_CANCEL_URL'];
-    $notify_url = $_ENV['PAYHERE_NOTIFY_URL'];
-    $currency = 'LKR';
+    $public_key = $_ENV['PAYSTACK_PUBLIC_KEY'];
+    $callback_url = $_ENV['PAYSTACK_CALLBACK_URL'];
+    $totalAmount = number_format($order['total'], 2, '.', '') * 100;
+    $reference = 'ORD-' . $order_id;
 
-    $hash = strtoupper(
-        md5(
-            $merchant_id . 
-            $order_id . 
-            number_format($order['total'], 2, '.', '') . 
-            $currency .  
-            strtoupper(md5($merchant_secret))
-        )
-    );
-
-    echo '<form method="post" action="https://sandbox.payhere.lk/pay/checkout" id="payhere_form">';
-    echo '<input type="hidden" name="merchant_id" value="' . $merchant_id . '">';
-    echo '<input type="hidden" name="return_url" value="' . $return_url . '">';
-    echo '<input type="hidden" name="cancel_url" value="' . $cancel_url . '">';
-    echo '<input type="hidden" name="notify_url" value="' . $notify_url . '">';
-    echo '<input type="hidden" name="order_id" value="' . $order_id . '">';
-    echo '<input type="hidden" name="items" value="Order No: ' . $order_id . '">';
-    echo '<input type="hidden" name="currency" value="' . $currency . '">';
-    echo '<input type="hidden" name="amount" value="' . number_format($order['total'], 2, '.', '') . '">';
-    echo '<input type="hidden" name="first_name" value="' . $user['first_name'] . '">';
-    echo '<input type="hidden" name="last_name" value="' . $user['last_name'] . '">';
-    echo '<input type="hidden" name="email" value="' . $user['email'] . '">';
-    echo '<input type="hidden" name="phone" value="' . $user['telephone'] . '">';
-    echo '<input type="hidden" name="address" value="' . $user['address'] . '">';
-    echo '<input type="hidden" name="city" value="' . $user['city'] . '">';
-    echo '<input type="hidden" name="country" value="' . $user['country'] . '">';
-    echo '<input type="hidden" name="hash" value="' . $hash . '">';
-    echo '</form>';
-
-    echo '<script>document.getElementById("payhere_form").submit();</script>';
+    echo '<script src="https://js.paystack.co/v1/inline.js"></script>';
+    echo "<script>
+        let handler = PaystackPop.setup({
+            key: '{$public_key}',
+            email: '{$user['email']}',
+            amount: {$totalAmount},
+            currency: 'NGN',
+            firstname: '{$user['first_name']}',
+            lastname: '{$user['last_name']}',
+            reference: '{$reference}',
+            callback: function(response) {
+                window.location.href = '{$callback_url}?reference=' + response.reference;
+            },
+            onClose: function() {
+                alert('Payment window closed.');
+                window.location.href = 'manage_orders.php';
+            }
+        });
+        setTimeout(() => handler.openIframe(), 1000);
+    </script>";
     exit;
 
 } elseif ($order['payment_method'] === 'cod') {
@@ -84,7 +72,6 @@ if ($order['payment_method'] === 'online_payment') {
     echo "<script>alert('Your order is marked as Cash on Delivery. You will be contacted for delivery.'); window.location.href = 'manage_orders.php';</script>";
     exit;
 }
-
 ?>
 
 <section class="checkout-area ptb-90">

@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <input type="password" class="form-control" name="password" required placeholder="Enter your password">
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary ce5 btn-large mb-10">Login</button>
+                            <button type="submit" class="btn btn-primary ce5 btn-large mb-10" style="border-radius: 10px;">Login</button>
                         </div>
                         <div class="text-center">
                             <p>Don't have an account? <a href="register.php" style="color: #B23372;">Register here</a></p>

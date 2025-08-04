@@ -64,7 +64,7 @@ if (isset($_GET['order_id'])) {
             </tr>
             <tr>
                 <th>Total</th>
-                <td>LKR <?= number_format($order['total'], 2) ?></td>
+                <td>NGN <?= number_format($order['total'], 2) ?></td>
             </tr>
             <tr>
                 <th>Status</th>
@@ -91,8 +91,8 @@ if (isset($_GET['order_id'])) {
                     <tr>
                         <td><?= $item['product_name'] ?></td>
                         <td><?= $item['quantity'] ?></td>
-                        <td>LKR <?= number_format($item['price'], 2) ?></td>
-                        <td>LKR <?= number_format($item['total'], 2) ?></td>
+                        <td>NGN <?= number_format($item['price'], 2) ?></td>
+                        <td>NGN <?= number_format($item['total'], 2) ?></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
@@ -112,5 +112,7 @@ function printOrder() {
     document.body.innerHTML = originalContents;
 }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 
 <?php include 'footer.php'; ?>
